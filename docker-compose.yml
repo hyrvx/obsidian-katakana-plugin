@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  nodejs:
+    image: node:22-alpine
+    container_name: nodejs-dev
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app  # Mount the current directory to /usr/src/app in the container
+    stdin_open: true     # Keep the container running for interaction
+    tty: true            # Allocate a pseudo-TTY for the container
+    command: sh          # Automatically start a shell session
